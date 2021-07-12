@@ -1,8 +1,10 @@
 body {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .section-links {
@@ -13,23 +15,47 @@ body {
         min-width: 20ch;
         text-align: center;
         text-decoration: none;
-        padding: 0.5rem 0.75rem;
-        border-radius: 0.5rem;
-        color: white;
-        background-color: black;
     }
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    min-width: 600px;
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.15);
+    border-radius: 0.5rem;
     & > * {
         margin: 0.5rem 0;
+        padding: 0.25rem;
     }
     .image-uploads {
+        width: 90%;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(2, 50%);
         gap: 1rem;
+        span {
+            background-color: rgba(0,0,0,0.15);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            label {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+.button {
+    color: white;
+    background-color: black;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    align-self: center;
+    &:hover {
+        background-color: hsl(0,0%,40%);
+        cursor: pointer;
     }
 }

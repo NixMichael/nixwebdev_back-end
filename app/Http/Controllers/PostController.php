@@ -15,7 +15,7 @@ class PostController extends Controller
         $fileName = str_replace(' ', '_', $request->title);
         $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
         $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
-        $imgPath = substr($webp, 12, -5);
+        $imgPath = substr($webp, 11, -5);
 
         Post::create([
             'title' => $request->title,
