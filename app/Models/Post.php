@@ -9,6 +9,13 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'body',
+        'keywords',
+        'image'
+    ];
+
     protected $casts = [
         'created_at' => 'datetime:d-m-Y',
     ];

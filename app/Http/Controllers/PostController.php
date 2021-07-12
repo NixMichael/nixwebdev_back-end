@@ -7,7 +7,23 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    function postlist () {
+    public function postlist () {
         return Post::all();
+    }
+
+    public function store (Request $request) {
+        $fileName = str_replace(' ', '_', $request->title);
+        $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
+        $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
+        $imgPath = substr($webp, 12, -5);
+
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'keywords' => $request->keywords,
+            'image' => $imgPath
+        ]);
+
+        return redirect('/');
     }
 }

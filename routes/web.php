@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
+
+Route::get('/blogposts', function () {
+    return view('blogpost.index');
+})->name('blogposts');
+
+Route::post('/blogposts', [PostController::class, 'store']);
+
+Route::get('/projects', function () {
+    return view('projects.index');
+})->name('projects');
+
+Route::post('/projects', [ProjectController::class, 'store']);
