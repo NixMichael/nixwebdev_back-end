@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +16,22 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
 
 Route::get('/blogposts', function () {
     return view('blogpost.index');
-})->name('blogposts');
+})->name('blogposts')->middleware('auth');
 
 Route::post('/blogposts', [PostController::class, 'store']);
 
 Route::get('/projects', function () {
     return view('projects.index');
-})->name('projects');
+})->name('projects')->middleware('auth');
 
 Route::post('/projects', [ProjectController::class, 'store']);
+
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('home');

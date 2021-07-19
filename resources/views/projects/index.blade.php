@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+{{-- @if(Auth::user()) --}}
 @section('content')
 
+<div class="content">
 <h1>Add a Portfolio Project</h1>
 
 <form action="/projects" method="POST" enctype="multipart/form-data">
@@ -33,7 +35,12 @@
     <input type="text" name="frontendLink" placeholder="Front-end link" required>
     <input type="text" name="backendLink" placeholder="Back-end link (if relevant)">
     <input type="text" name="liveLink" placeholder="Live link" required>
-    <button class="button" type="submit">Submit</button>
+    <div class="buttons">
+        <button class="button"><a href="/">Cancel</a></button>
+        <button class="button" type="submit">Submit</button>
+    </div>
 </form>
+</div>
 
 @endsection
+{{-- @endif --}}
