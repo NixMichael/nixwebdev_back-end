@@ -18,7 +18,7 @@ body nav {
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   background-color: #111111;
 }
 body nav a {
@@ -40,9 +40,11 @@ body nav ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
 }
 
+.login-card {
+  padding: 1.5rem 3rem;
+}
 .login-card input {
   padding: 0.25rem;
   margin-bottom: 0.5rem;
@@ -117,7 +119,5 @@ body nav ul {
 }
 .button a {
   color: white;
-}
-.button a:hover {
   text-decoration: none;
 }
