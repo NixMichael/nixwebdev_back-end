@@ -1,21 +1,55 @@
 // Variables
-@import 'variables';
+// @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
 body {
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     // align-items: center;
     font-family: 'Roboto', sans-serif;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        padding: 0 2rem;
+        background-color: rgb(17, 17, 17);
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+        }
+    }
+}
+
+.card {
+    width: 60vw;
+    margin: 2rem auto;
+    border: 2px solid rgba(0,0,0,0.3);
+    border-radius: 2rem;
+    background-color: hsl(0, 0%, 95%);
+    padding: 2rem;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-links {
     display: flex;
     justify-content: space-around;
+    gap: 2rem;
     .section-link {
         min-width: 20ch;
         text-align: center;
