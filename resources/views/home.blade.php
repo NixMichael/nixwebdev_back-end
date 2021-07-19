@@ -5,13 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
+                <div>
                     @if(Auth::user())
                         <div class="section-links">
                             <a class="section-link button" href="{{route('blogposts')}}">New Blog Post</a>

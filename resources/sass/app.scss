@@ -1,23 +1,23 @@
-// Variables
-// @import 'variables';
-
-// Bootstrap
-// @import '~bootstrap/scss/bootstrap';
+* {
+    outline: none;
+    &:focus {
+        box-shadow: 0 0 0 3px black;
+    }
+}
 
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    // align-items: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
     font-family: 'Roboto', sans-serif;
 
     main {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
     }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .card {
-    margin: 2rem auto;
+    margin: 6rem auto 0;
     border: 2px solid rgba(0,0,0,0.3);
     border-radius: 2rem;
     background-color: hsl(0, 0%, 95%);
@@ -53,9 +53,10 @@ body {
 
 .login-card {
     padding: 1.5rem 3rem;
-    input {
-        padding: 0.25rem;
-        margin-bottom: 0.5rem;
+    input, button {
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border-radius: 0.5rem;
     }
     .link-sm {
         margin-top: 0.25rem;

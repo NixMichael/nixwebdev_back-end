@@ -39,22 +39,22 @@
                     </div>
 
                     <div>
-                        <div>
+                        {{-- <div>
                             <div>
                                 <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                 <label for="remember">Remember Me</label>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div>
                         <div>
                             <button class="button" type="submit">Login</button>
 
-                            @if (Route::has('password.request'))
+                            {{-- @if (Route::has('password.request'))
                                 <a class="link-sm" href="{{ route('password.request') }}">Forgot Your Password?</a>
-                            @endif
+                            @endif --}}
                         </div>
                     </div>
                 </form>
