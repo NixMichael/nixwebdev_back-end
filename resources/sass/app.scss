@@ -15,6 +15,12 @@ body {
     // align-items: center;
     font-family: 'Roboto', sans-serif;
 
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     nav {
         display: flex;
         justify-content: space-between;
@@ -29,21 +35,33 @@ body {
         ul {
             display: flex;
             list-style: none;
+            gap: 1rem;
         }
     }
 }
 
 .card {
-    width: 60vw;
     margin: 2rem auto;
     border: 2px solid rgba(0,0,0,0.3);
     border-radius: 2rem;
     background-color: hsl(0, 0%, 95%);
     padding: 2rem;
     display: flex;
-    gap: 4rem;
     flex-direction: column;
     align-items: center;
+    gap: 4rem;
+}
+
+.login-card {
+    input {
+        padding: 0.25rem;
+        margin-bottom: 0.5rem;
+    }
+    .link-sm {
+        margin-top: 0.25rem;
+        display: block;
+        font-size: 0.8rem;
+    }
 }
 
 .section-links {
