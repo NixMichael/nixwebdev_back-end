@@ -51,7 +51,7 @@
                 <input type="text" name="backendLink" placeholder="Back-end link (if relevant)" value="{{$project->backend_link}}">
                 <input type="text" name="liveLink" placeholder="Live link" value="{{$project->live_link}}" required>
                 <div class="buttons">
-                    <a class="button button-link" href="/">Cancel</a>
+                    <a class="button button-link" href="/projects">Cancel</a>
                     <button class="button" type="submit">Submit</button>
                 </div>
             </form>
