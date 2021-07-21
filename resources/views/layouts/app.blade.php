@@ -22,26 +22,20 @@
         <a href="{{ url('/') }}">
             <span id="title">Content Editor</span>
         </a>
-        <ul>
+        <div>
             @guest
                 @if (Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    </li>
+                        <a class="nav-link nav-item" href="{{ route('login') }}">Login</a>
                 @endif
 
                 @else
-                    <li class="nav-item">
-                        <a href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <a class="nav-link nav-item" href="/">Home</a>
+                        <a class="nav-link nav-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </li>
             @endguest
-        </ul>
+        </div>
     </nav>
 
     <main>

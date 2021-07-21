@@ -35,18 +35,19 @@ body nav a {
 body nav a #title {
   font-size: 2em;
 }
-body nav ul {
+body nav div {
   display: flex;
   list-style: none;
   gap: 1rem;
 }
-body nav ul li {
+body nav div a {
   background-color: white;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
-}
-body nav ul li a {
   color: black;
+}
+body nav div a:focus {
+  box-shadow: 0 0 0 3px white;
 }
 
 .card {
@@ -170,6 +171,9 @@ body nav ul li a {
   padding: 2rem 0;
 }
 .existing-content-container .existing-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 35%;
   margin: 1rem;
   padding: 2rem;
