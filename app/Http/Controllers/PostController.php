@@ -60,9 +60,7 @@ class PostController extends Controller
         }
 
         $post = Post::find($id);
-        $post->update([
-            $data
-        ]);
+        $post->update($data);
 
         return redirect('/blogposts');
         
