@@ -49,12 +49,19 @@ class PostController extends Controller
             $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
         }
 
-        $post = Post::find($id);
-        $post->update([
+        $data = [
             'title' => $request->title,
             'body' => $request->body,
-            'keywords' => $request->keywords,
-            'image' => $fileName
+            'keywords' => $request->keywords
+        ];
+
+        if ($request->webp) {
+            $data['image'] = $fileName;
+        }
+
+        $post = Post::find($id);
+        $post->update([
+            $data
         ]);
 
         return redirect('/blogposts');
