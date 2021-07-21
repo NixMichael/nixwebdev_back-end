@@ -20,9 +20,13 @@ use App\Http\Controllers\HomeController;
 //     return view('home.index');
 // });
 
-Route::get('/blogposts', function () {
-    return view('blogpost.index');
-})->name('blogposts')->middleware('auth');
+Route::get('/blogposts', [PostController::class, 'index'])->name('blogposts')->middleware('auth');
+
+Route::get('/deletepost/{id}', [PostController::class, 'deletepost']);
+
+// Route::get('/blogposts', function () {
+//     return view('blogpost.index');
+// })->name('blogposts')->middleware('auth');
 
 Route::post('/blogposts', [PostController::class, 'store']);
 

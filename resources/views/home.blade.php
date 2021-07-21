@@ -8,8 +8,8 @@
                 <div>
                     @if(Auth::user())
                         <div class="section-links">
-                            <a class="section-link button" href="{{route('blogposts')}}">New Blog Post</a>
-                            <a class="section-link button" href="{{route('projects')}}">Manage Projects</a>
+                            <a class="button-link button" href="{{route('blogposts')}}">Manage Blog Posts</a>
+                            <a class="button-link button" href="{{route('projects')}}">Manage Projects</a>
                         </div>
                     @endif
                 </div>

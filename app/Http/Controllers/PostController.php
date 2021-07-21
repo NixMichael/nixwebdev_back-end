@@ -11,11 +11,17 @@ class PostController extends Controller
         return Post::all();
     }
 
+    public function index () {
+        $posts = Post::all();
+        return view('blogpost.index', ['data' => $posts]);
+    }
+
     public function store (Request $request) {
         $fileName = str_replace(' ', '_', $request->title);
-        $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
-        $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
-        $imgPath = substr($webp, 11, -5);
+        // $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
+        // $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
+        // $imgPath = substr($webp, 11, -5);
+        $imgPath = $fileName;
 
         Post::create([
             'title' => $request->title,
@@ -24,6 +30,12 @@ class PostController extends Controller
             'image' => $imgPath
         ]);
 
-        return redirect('/');
+        return redirect('/blogposts');
+    }
+
+    public function deletepost ($id) {
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/blogposts');
     }
 }
