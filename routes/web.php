@@ -28,6 +28,10 @@ Route::post('/projects', [ProjectController::class, 'store']);
 
 Route::get('/deleteproject/{id}', [ProjectController::class, 'deleteproject']);
 
+Route::get('/editproject/{id}', [ProjectController::class, 'editproject']);
+
+Route::post('/updateproject', [ProjectController::class, 'updateproject']);
+
 // Auth Routes
 
 Auth::routes();

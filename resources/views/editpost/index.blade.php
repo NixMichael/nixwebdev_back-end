@@ -6,7 +6,7 @@
         <div class="editor-section">
             <h1>Edit Blog Post</h1>
 
-            <form action="/updatepost" method="post" enctype="multipart/form-data">
+            <form action="/updatepost" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$post->id}}">
                 <input type="text" name="title" placeholder="Post title..." value="{{$post->title}}" required>

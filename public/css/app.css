@@ -32,10 +32,21 @@ body nav a {
   color: white;
   text-decoration: none;
 }
+body nav a #title {
+  font-size: 2em;
+}
 body nav ul {
   display: flex;
   list-style: none;
   gap: 1rem;
+}
+body nav ul li {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.5rem 0.75rem;
+}
+body nav ul li a {
+  color: black;
 }
 
 .card {

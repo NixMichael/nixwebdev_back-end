@@ -31,11 +31,22 @@ body {
         a {
             color: white;
             text-decoration: none;
+            #title {
+                font-size: 2em;
+            }
         }
         ul {
             display: flex;
             list-style: none;
             gap: 1rem;
+            li {
+                background-color: white;
+                border-radius: 1rem;
+                padding: 0.5rem 0.75rem;
+                a {
+                    color: black;
+                }
+            }
         }
     }
 }

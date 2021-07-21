@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- @if(Auth::user()) --}}
+@if(Auth::user())
 @section('content')
 
 <div class="content">
@@ -52,8 +52,8 @@
                 <img src="https://nixwebdev.s3.eu-west-2.amazonaws.com/project_images/{{$project->image_id}}_700.png"/>
                 <p>{{$project->body}}</p>
                 <div class="action-buttons">
-                    <a href="" class="button button-link">EDIT PROJECT</a>
-                    <a class="button button-link" href="/deleteproject/{{$project->id}}">DELETE PROJECT</a>
+                    <a href="/editproject/{{$project->id}}" class="button button-link">Edit Project</a>
+                    <a class="button button-link" href="/deleteproject/{{$project->id}}">Delete Project</a>
                 </div>
             </div>
             @endforeach
@@ -62,4 +62,4 @@
 </div>
 
 @endsection
-{{-- @endif --}}
+@endif
