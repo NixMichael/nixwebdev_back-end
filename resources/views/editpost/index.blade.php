@@ -29,7 +29,7 @@
                 </div>
                 <input type="text" name="keywords" placeholder="Keywords (comma separated)..." value="{{$post->keywords}}" required>
                 <div class="buttons">
-                    <a class="button button-link" href="/">Cancel</a>
+                    <a class="button button-link" href="/blogposts">Cancel</a>
                     <button class="button" type="submit">Submit</button>
                 </div>
             </form>

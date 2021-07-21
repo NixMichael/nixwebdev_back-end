@@ -37,7 +37,7 @@
             <input type="text" name="backendLink" placeholder="Back-end link (if relevant)">
             <input type="text" name="liveLink" placeholder="Live link" required>
             <div class="buttons">
-                <button class="button"><a href="/">Cancel</a></button>
+                <a class="button button-link" href="/">Cancel</a>
                 <button class="button" type="submit">Submit</button>
             </div>
         </form>

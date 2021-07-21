@@ -18,9 +18,8 @@ class PostController extends Controller
 
     public function store (Request $request) {
         $fileName = str_replace(' ', '_', $request->title);
-        $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
+        $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
         $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
-        // $imgPath = substr($webp, 11, -5);
 
         Post::create([
             'title' => $request->title,
@@ -43,7 +42,7 @@ class PostController extends Controller
 
         $fileName = str_replace(' ', '_', $request->title);
         if ($request->webp) {
-            $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
+            $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
         }
         if ($request->png) {
             $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
