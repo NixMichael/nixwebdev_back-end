@@ -136,31 +136,32 @@ body nav ul {
   background-color: rgba(107, 159, 202, 0.15);
 }
 .editor-section h1 {
-  background: black;
+  background: #1a1a1a;
   margin: 0;
   padding: 1rem;
   color: white;
 }
 
-.existing-posts {
-  width: 90vw;
-  padding: 2rem;
+.existing-content-container {
+  width: 100%;
   display: flex;
-  gap: 2rem;
+  justify-content: space-around;
   flex-wrap: wrap;
+  padding: 2rem 0;
 }
-.existing-posts .existing-post {
+.existing-content-container .existing-content {
   width: 35%;
+  margin: 1rem;
   padding: 2rem;
   box-shadow: 0 0 5px 0 black;
   border-radius: 1rem;
-  background-color: #e7e7e7;
+  background-color: #e9eded;
 }
-.existing-posts .existing-post img {
+.existing-content-container .existing-content img {
   width: 100%;
   outline: 1px solid rgba(0, 0, 0, 0.3);
 }
-.existing-posts .existing-post .action-buttons {
+.existing-content-container .existing-content .action-buttons {
   margin: 1rem 0;
   display: flex;
   justify-content: space-around;

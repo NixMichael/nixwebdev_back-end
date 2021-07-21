@@ -18,7 +18,7 @@ use App\Http\Controllers\ProjectController;
 
 Route::get('data', [PostController::class, 'postlist']);
 
-Route::get('projects', [ProjectController::class, 'index']);
+Route::get('projects', [ProjectController::class, 'projectlist']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

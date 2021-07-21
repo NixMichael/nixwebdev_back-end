@@ -28,18 +28,17 @@
         </form>
     </div>
 
-
     <div class="editor-section">
         <h1>Current Blog Posts</h1>
-        <div class="existing-posts">
-            @foreach($data as $el)
-            <div class="existing-post">
-                <h2>{{$el->title}}</h2>
-                <img src="https://nixwebdev.s3.eu-west-2.amazonaws.com/blogimages/{{$el->image}}.png"/>
-                <p>{{$el->body}}</p>
+        <div class="existing-content-container">
+            @foreach($posts as $post)
+            <div class="existing-content">
+                <h2>{{$post->title}}</h2>
+                <img src="https://nixwebdev.s3.eu-west-2.amazonaws.com/blogimages/{{$post->image}}.png"/>
+                <p>{{$post->body}}</p>
                 <div class="action-buttons">
                     <a href="" class="button button-link">EDIT POST</a>
-                    <a class="button button-link" href="/deletepost/{{$el->id}}">DELETE POST</a>
+                    <a class="button button-link" href="/deletepost/{{$post->id}}">DELETE POST</a>
                 </div>
             </div>
             @endforeach

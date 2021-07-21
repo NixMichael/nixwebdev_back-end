@@ -13,7 +13,7 @@ class PostController extends Controller
 
     public function index () {
         $posts = Post::all();
-        return view('blogpost.index', ['data' => $posts]);
+        return view('blogpost.index', ['posts' => $posts]);
     }
 
     public function store (Request $request) {
