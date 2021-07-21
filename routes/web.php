@@ -16,6 +16,10 @@ Route::post('/blogposts', [PostController::class, 'store']);
 
 Route::get('/deletepost/{id}', [PostController::class, 'deletepost']);
 
+Route::get('/editpost/{id}', [PostController::class, 'editpost']);
+
+Route::post('/updatepost', [PostController::class, 'updatepost']);
+
 // Project Controllers
 
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects')->middleware('auth');

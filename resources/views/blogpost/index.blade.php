@@ -22,7 +22,7 @@
             </div>
             <input type="text" name="keywords" placeholder="Keywords (comma separated)..." required>
             <div class="buttons">
-                <button class="button"><a href="/">Cancel</a></button>
+                <a class="button button-link" href="/">Cancel</a>
                 <button class="button" type="submit">Submit</button>
             </div>
         </form>
@@ -37,8 +37,8 @@
                 <img src="https://nixwebdev.s3.eu-west-2.amazonaws.com/blogimages/{{$post->image}}.png"/>
                 <p>{{$post->body}}</p>
                 <div class="action-buttons">
-                    <a href="" class="button button-link">EDIT POST</a>
-                    <a class="button button-link" href="/deletepost/{{$post->id}}">DELETE POST</a>
+                    <a href="/editpost/{{$post->id}}" class="button button-link">Edit Post</a>
+                    <a class="button button-link" href="/deletepost/{{$post->id}}">Delete Post</a>
                 </div>
             </div>
             @endforeach

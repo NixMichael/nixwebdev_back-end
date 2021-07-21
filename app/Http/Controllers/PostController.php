@@ -18,19 +18,47 @@ class PostController extends Controller
 
     public function store (Request $request) {
         $fileName = str_replace(' ', '_', $request->title);
-        // $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
-        // $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
+        $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
+        $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
         // $imgPath = substr($webp, 11, -5);
-        $imgPath = $fileName;
 
         Post::create([
             'title' => $request->title,
             'body' => $request->body,
             'keywords' => $request->keywords,
-            'image' => $imgPath
+            'image' => $fileName
         ]);
 
         return redirect('/blogposts');
+    }
+    
+    public function editpost ($id) {
+        $post = Post::find($id);
+
+        return view('editpost.index', ['post' => $post]);
+    }
+
+    public function updatepost (Request $request) {
+        $id = $request->id;
+
+        $fileName = str_replace(' ', '_', $request->title);
+        if ($request->webp) {
+            $webp = $request->file(key: 'webp')->storeAs('blogimages', $fileName . '.webp', 's3');
+        }
+        if ($request->png) {
+            $request->file(key: 'png')->storeAs('blogimages', $fileName . '.png', 's3');
+        }
+
+        $post = Post::find($id);
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+            'keywords' => $request->keywords,
+            'image' => $fileName
+        ]);
+
+        return redirect('/blogposts');
+        
     }
 
     public function deletepost ($id) {

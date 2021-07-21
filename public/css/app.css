@@ -70,7 +70,6 @@ body nav ul {
 }
 
 .button-link {
-  min-width: 20ch;
   text-align: center;
   text-decoration: none;
 }
@@ -92,19 +91,27 @@ body nav ul {
 }
 .content form .image-uploads {
   width: 90%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   gap: 1rem;
 }
-.content form .image-uploads span {
+.content form .image-uploads .file-selection {
   background-color: rgba(0, 0, 0, 0.15);
   padding: 0.5rem;
   border-radius: 0.5rem;
   display: flex;
+  justify-content: space-between;
+}
+.content form .image-uploads .file-selection > div {
+  display: flex;
   flex-direction: column;
 }
-.content form .image-uploads span label {
+.content form .image-uploads .file-selection label {
   margin-bottom: 0.5rem;
+}
+.content form .image-uploads .file-selection img {
+  width: 50%;
 }
 .content form .buttons {
   display: flex;
@@ -115,10 +122,12 @@ body nav ul {
 .button {
   color: white;
   background-color: black;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 0.5rem;
   align-self: center;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
 }
 .button:hover {
   color: white;
