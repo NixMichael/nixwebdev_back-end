@@ -8,10 +8,10 @@
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 4rem 0;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   font-family: "Roboto", sans-serif;
 }
 body main {
@@ -22,6 +22,10 @@ body main {
 }
 body nav {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   justify-content: space-between;
   align-items: center;
   color: white;
@@ -29,8 +33,14 @@ body nav {
   background-color: #111111;
 }
 body nav a {
+  display: flex;
+  align-items: center;
   color: white;
   text-decoration: none;
+}
+body nav a img {
+  height: 2.5rem;
+  margin-right: 0.5rem;
 }
 body nav a #title {
   font-size: 2em;
@@ -157,7 +167,7 @@ body nav div a:focus {
   background-color: rgba(107, 159, 202, 0.15);
 }
 .editor-section h1 {
-  background: #1a1a1a;
+  background: #1d3b62;
   margin: 0;
   padding: 1rem;
   color: white;

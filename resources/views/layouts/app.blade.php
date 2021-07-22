@@ -11,8 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{asset('js/app.js')}}" defer></script>
+    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    <link rel="stylesheet" href="https://nixwebdev-api.herokuapp.com/css/app.css">
+    {{-- <script src="{{asset('js/app.js')}}" defer></script> --}}
+    <script src="https://nixwebdev-api.herokuapp.com/js/app.js" defer></script>
 
     <title>{{ config('app.name') }}</title>
 
@@ -20,7 +22,7 @@
 <body>
     <nav>
         <a href="{{ url('/') }}">
-            <span id="title">Content Editor</span>
+            <img src="https://nixwebdev.s3.eu-west-2.amazonaws.com/graphics/logo.png"><span id="title">Content Editor</span>
         </a>
         <div>
             @guest
